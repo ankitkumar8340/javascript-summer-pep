@@ -247,6 +247,108 @@ for(let i=0; i<arr3.length; i++){
 
 
 
+// ================================
+// JavaScript DOM Manipulation Examples
+// ================================
+
+// 1. Change Text
+function changeText() {
+    document.getElementById("heading").innerHTML = "Welcome Ankit!";
+}
+
+// 2. Change Style
+function changeStyle() {
+    let p = document.getElementById("para");
+
+    p.style.color = "red";
+    p.style.backgroundColor = "yellow";
+    p.style.fontSize = "25px";
+    p.style.border = "2px solid black";
+}
+
+// 3. Change Image
+function turnOn() {
+    document.getElementById("img").src = "on.png";
+}
+
+function turnOff() {
+    document.getElementById("img").src = "off.png";
+}
+
+// 4. Change Link
+function changeLink() {
+    let link = document.getElementById("link");
+
+    link.href = "https://www.google.com";
+    link.innerHTML = "Go to Google";
+}
+
+// 5. Hide Element
+function hideText() {
+    document.getElementById("text").style.display = "none";
+}
+
+// 6. Show Element
+function showText() {
+    document.getElementById("text").style.display = "block";
+}
+
+// 7. Read User Input
+function displayName() {
+    let name = document.getElementById("name").value;
+
+    document.getElementById("result").innerHTML =
+        "Welcome " + name;
+}
+
+// 8. Change Background Color
+function changeBackground() {
+    document.body.style.backgroundColor = "lightblue";
+}
+
+// 9. Create New Element
+function addParagraph() {
+    let p = document.createElement("p");
+
+    p.innerHTML = "This paragraph is created by JavaScript.";
+
+    document.getElementById("container").appendChild(p);
+}
+
+// 10. Remove Element
+function removeParagraph() {
+    document.getElementById("removeMe").remove();
+}
+
+// 11. Event Listener
+document.getElementById("btn").addEventListener("click", function () {
+    alert("Button Clicked!");
+});
+
+// 12. Change All Elements of Same Class
+function changeAll() {
+    let items = document.getElementsByClassName("demo");
+
+    for (let i = 0; i < items.length; i++) {
+        items[i].style.color = "blue";
+        items[i].style.fontSize = "22px";
+    }
+}
+
+// 13. Query Selector
+function queryExample() {
+    document.querySelector(".first").style.color = "green";
+}
+
+// 14. Query Selector All
+function queryAllExample() {
+    let items = document.querySelectorAll(".all");
+
+
+
+
+
+
 
 
 
