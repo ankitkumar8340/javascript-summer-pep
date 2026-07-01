@@ -344,11 +344,137 @@ function queryExample() {
 function queryAllExample() {
     let items = document.querySelectorAll(".all");
 
+    items.forEach(function (item) {
+        item.style.color = "purple";
+        item.style.fontWeight = "bold";
+    });
+}
 
+// 15. Change Attribute
+function setAttributeExample() {
+    document.getElementById("image")
+        .setAttribute("width", "300");
+}
 
+// 16. Get Attribute
+function getAttributeExample() {
+    let value = document.getElementById("image")
+        .getAttribute("src");
 
+    console.log(value);
+}
 
+// 17. Add CSS Class
+function addClass() {
+    document.getElementById("box")
+        .classList.add("active");
+}
 
+// 18. Remove CSS Class
+function removeClass() {
+    document.getElementById("box")
+        .classList.remove("active");
+}
 
+// 19. Toggle CSS Class
+function toggleClass() {
+    document.getElementById("box")
+        .classList.toggle("active");
+}
 
+// 20. Change Text Content
+function changeTextContent() {
+    document.getElementById("demo")
+        .textContent = "New Text";
+}
+
+// 21. Get HTML Content
+function getHTML() {
+    console.log(
+        document.getElementById("demo").innerHTML
+    );
+}
+
+// 22. Set HTML Content
+function setHTML() {
+    document.getElementById("demo").innerHTML =
+        "<b>Hello JavaScript</b>";
+}
+
+// 23. Change Input Value
+function setValue() {
+    document.getElementById("input").value =
+        "Ankit Kumar";
+}
+
+// 24. Get Input Value
+function getValue() {
+    let value = document.getElementById("input").value;
+
+    console.log(value);
+}
+
+// 25. Change Multiple Styles
+function multipleStyle() {
+    let box = document.getElementById("box");
+
+    box.style.width = "200px";
+    box.style.height = "200px";
+    box.style.backgroundColor = "orange";
+    box.style.borderRadius = "20px";
+}
+
+// 26. Window Alert
+function showAlert() {
+    alert("Hello!");
+}
+
+// 27. Confirm Box
+function showConfirm() {
+    let result = confirm("Are you sure?");
+
+    console.log(result);
+}
+
+// 28. Prompt Box
+function showPrompt() {
+    let name = prompt("Enter your name");
+
+    console.log(name);
+}
+
+// 29. Current Date
+function currentDate() {
+    console.log(new Date());
+}
+
+// 30. Current Time
+function currentTime() {
+    console.log(new Date().toLocaleTimeString());
+}
+
+// 31. Random Number
+function randomNumber() {
+    console.log(Math.random());
+}
+
+// 32. Redirect to Another Page
+function redirectPage() {
+    window.location.href = "https://www.google.com";
+}
+
+// 33. Reload Page
+function reloadPage() {
+    location.reload();
+}
+
+// 34. Go Back
+function goBack() {
+    history.back();
+}
+
+// 35. Go Forward
+function goForward() {
+    history.forward();
+}
 
