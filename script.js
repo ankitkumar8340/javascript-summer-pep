@@ -478,3 +478,34 @@ function goForward() {
     history.forward();
 }
 
+// 36. Print Page
+function printPage() {
+    window.print();
+}
+
+// 37. Mouse Event
+function mouseOver() {
+    console.log("Mouse Over");
+}
+
+// 38. Keyboard Event
+function keyPressed() {
+    console.log("Key Pressed");
+}
+
+// 39. Double Click
+function doubleClick() {
+    console.log("Double Click");
+}
+
+// 40. Page Loaded
+window.onload = function () {
+    console.log("Page Loaded Successfully");
+};
+
+
+
+
+
+
+
