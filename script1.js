@@ -11,5 +11,18 @@ function outer() {
 const counter = outer();
 
 counter(); // 1
-counter(); // 2
+counter(); // 2]
 counter(); // 3
+
+
+
+function greet(name, callback) {
+    console.log("Hello " + name);
+    callback();
+}
+
+function goodbye() {
+    console.log("Good Bye");
+}
+
+greet("Ankit", goodbye);
