@@ -26,3 +26,50 @@ function goodbye() {
 }
 
 greet("Ankit", goodbye);
+
+
+
+
+const promise = new Promise((resolve, reject) => {
+
+    let success = true;
+
+    if (success) {
+        resolve("Data Loaded Successfully");
+    } else {
+        reject("Something went wrong");
+    }
+
+});
+
+promise
+.then((result) => {
+    console.log(result);
+})
+.catch((error) => {
+    console.log(error);
+})
+.finally(() => {
+    console.log("Promise Completed");
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
