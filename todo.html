@@ -4,6 +4,54 @@
 <meta charset="UTF-8">
 <title>Todo List</title>
 <style>
+  * { box-sizing: border-box; }
+  body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: #1e1e2f;
+    color: #eee;
+    display: flex;
+    justify-content: center;
+    padding: 40px 15px;
+    margin: 0;
+  }
+  .app {
+    background: #27293d;
+    width: 100%;
+    max-width: 420px;
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+  }
+  h1 {
+    text-align: center;
+    font-size: 22px;
+    margin-bottom: 20px;
+  }
+  .input-row {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 16px;
+  }
+  #todo-input {
+    flex: 1;
+    padding: 10px 12px;
+    border-radius: 8px;
+    border: none;
+    background: #1e1e2f;
+    color: #fff;
+    outline: none;
+    font-size: 14px;
+  }
+  #add-btn {
+    background: #6c5ce7;
+    border: none;
+    color: #fff;
+    padding: 10px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+  }
+  #add-btn:hover { background: #5a4bd1; }
 
   
 </style>
