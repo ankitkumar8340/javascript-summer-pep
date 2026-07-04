@@ -221,7 +221,16 @@
   }
 
   // ---- Render ----
-  
+  function render() {
+    const filtered = getFilteredTodos();
+    list.innerHTML = '';
+
+    if (filtered.length === 0) {
+      const msg = document.createElement('div');
+      msg.className = 'empty-msg';
+      msg.textContent = 'Nothing here yet.';
+      list.appendChild(msg);
+    }
 
    
 </script>
