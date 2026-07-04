@@ -232,7 +232,47 @@
       list.appendChild(msg);
     }
 
-   
+    filtered.forEach(todo => {
+      const li = document.createElement('li');
+      if (todo.completed) li.classList.add('completed');
+
+      const span = document.createElement('span');
+      span.className = 'text';
+      span.textContent = todo.text;
+      span.addEventListener('click', () => toggleTodo(todo.id));
+
+      const delBtn = document.createElement('button');
+      delBtn.className = 'delete-btn';
+      delBtn.textContent = '✕';
+      delBtn.addEventListener('click', () => deleteTodo(todo.id));
+
+      li.appendChild(span);
+      li.appendChild(delBtn);
+      list.appendChild(li);
+    });
+
+    const remaining = todos.filter(t => !t.completed).length;
+    itemsLeft.textContent = `${remaining} item${remaining !== 1 ? 's' : ''} left`;
+  }
+
+  // ---- Event Listeners ----
+  addBtn.addEventListener('click', addTodo);
+  input.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter') addTodo();
+  });
+  clearCompletedBtn.addEventListener('click', clearCompleted);
+
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      currentFilter = btn.dataset.filter;
+      render();
+    });
+  });
+
+  // ---- Initial Render ----
+  render();
 </script>
 
 </body>
