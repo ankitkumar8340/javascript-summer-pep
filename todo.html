@@ -159,6 +159,56 @@
 </div>
 
 <script>
+  // ---- State ----
+  let todos = JSON.parse(localStorage.getItem('todos') || '[]');
+  let currentFilter = 'all';
+
+  // ---- DOM References ----
+  const input = document.getElementById('todo-input');
+  const addBtn = document.getElementById('add-btn');
+  const list = document.getElementById('todo-list');
+  const itemsLeft = document.getElementById('items-left');
+  const clearCompletedBtn = document.getElementById('clear-completed');
+  const filterBtns = document.querySelectorAll('.filters button');
+
+  // ---- Save to localStorage ----
+  function save() {
+    localStorage.setItem('todos', JSON.stringify(todos));
+  }
+
+  // ---- Add a todo ----
+  function addTodo() {
+    const text = input.value.trim();
+    if (!text) return;
+    todos.push({
+      id: Date.now(),
+      text: text,
+      completed: false
+    });
+    input.value = '';
+    save();
+    render();
+  }
+
+  // ---- Toggle completed ----
+  function toggleTodo(id) {
+    todos = todos.map(t =>
+      t.id === id ? { ...t, completed: !t.completed } : t
+    );
+    save();
+    render();
+  }
+
+  // ---- Delete a todo ----
+  function deleteTodo(id) {
+    todos = todos.filter(t => t.id !== id);
+    save();
+    render();
+  }
+
+  
+
+  // ---- Render ----
   
 
    
