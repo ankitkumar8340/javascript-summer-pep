@@ -206,7 +206,19 @@
     render();
   }
 
-  
+  // ---- Clear completed ----
+  function clearCompleted() {
+    todos = todos.filter(t => !t.completed);
+    save();
+    render();
+  }
+
+  // ---- Filtering ----
+  function getFilteredTodos() {
+    if (currentFilter === 'active') return todos.filter(t => !t.completed);
+    if (currentFilter === 'completed') return todos.filter(t => t.completed);
+    return todos;
+  }
 
   // ---- Render ----
   
