@@ -164,6 +164,31 @@
     return null;
   }
 
+  // ---- Handle a move ----
+  function handleMove(index) {
+    if (!gameActive || board[index]) return;
+
+    board[index] = currentPlayer;
+    render();
+
+    const result = checkWinner();
+    if (result) {
+      gameActive = false;
+      if (result.winner === 'draw') {
+        statusEl.textContent = "It's a draw!";
+        scores.draw++;
+      } else {
+        statusEl.textContent = `Player ${result.winner} wins!`;
+        scores[result.winner]++;
+        highlightWin(result.line);
+      }
+      updateScoreboard();
+      return;
+    }
+
+    currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
+    statusEl.textContent = `Player ${currentPlayer}'s turn`;
+  }
 
 
  
