@@ -209,7 +209,36 @@
     });
   }
 
- 
+  // ---- Update scoreboard ----
+  function updateScoreboard() {
+    scoreXEl.textContent = scores.X;
+    scoreOEl.textContent = scores.O;
+    scoreDrawEl.textContent = scores.draw;
+  }
+
+  // ---- Start a new round (keeps score) ----
+  function newRound() {
+    board = Array(9).fill(null);
+    currentPlayer = 'X';
+    gameActive = true;
+    statusEl.textContent = "Player X's turn";
+    render();
+  }
+
+  // ---- Reset everything ----
+  function resetScore() {
+    scores = { X: 0, O: 0, draw: 0 };
+    updateScoreboard();
+    newRound();
+  }
+
+  // ---- Event Listeners ----
+  resetBtn.addEventListener('click', newRound);
+  resetScoreBtn.addEventListener('click', resetScore);
+
+  // ---- Init ----
+  buildBoard();
+  render();
 </script>
 
 </body>
