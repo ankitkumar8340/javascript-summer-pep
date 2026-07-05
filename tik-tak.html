@@ -190,6 +190,24 @@
     statusEl.textContent = `Player ${currentPlayer}'s turn`;
   }
 
+  // ---- Highlight winning cells ----
+  function highlightWin(line) {
+    line.forEach(i => {
+      boardEl.children[i].classList.add('win');
+    });
+  }
+
+  // ---- Render board state ----
+  function render() {
+    board.forEach((value, i) => {
+      const cell = boardEl.children[i];
+      cell.textContent = value || '';
+      cell.className = 'cell';
+      if (value === 'X') cell.classList.add('x');
+      if (value === 'O') cell.classList.add('o');
+      cell.disabled = !!value || !gameActive;
+    });
+  }
 
  
 </script>
